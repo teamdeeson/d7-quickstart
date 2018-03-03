@@ -1,0 +1,70 @@
+.DS_Store
+.idea
+.sass-cache
+BACKPORT.txt
+backups
+xdebug_profiles
+docroot/frontend
+frontend/assets/css
+frontend/assets/js/min
+docroot/sites/all/modules/contrib/coder
+
+# Ignore paths that contain user-generated content.
+docroot/sites/*/files
+
+###
+### Everything below this point should be excluded from the .gitignore.deploy
+### file which replaces this file when we are constructing our deployment
+### package
+###
+
+# Ignore Drupal Core
+docroot/includes
+docroot/misc
+docroot/modules
+docroot/profiles
+docroot/scripts
+docroot/sites/all/libraries/README.txt
+docroot/sites/all/modules/README.txt
+docroot/sites/all/themes/README.txt
+docroot/sites/default/default.settings.php
+docroot/sites/example.sites.php
+docroot/sites/README.txt
+docroot/themes
+docroot/.editorconfig
+docroot/.gitignore
+docroot/.htaccess
+docroot/authorize.php
+docroot/CHANGELOG.txt
+docroot/COPYRIGHT.txt
+docroot/cron.php
+docroot/index.php
+docroot/INSTALL.mysql.txt
+docroot/INSTALL.pgsql.txt
+docroot/install.php
+docroot/INSTALL.sqlite.txt
+docroot/INSTALL.txt
+docroot/LICENSE.txt
+docroot/MAINTAINERS.txt
+docroot/README.txt
+docroot/robots.txt
+docroot/update.php
+docroot/UPGRADE.txt
+docroot/web.config
+docroot/xmlrpc.php
+
+# Ignore Drupal Contrib
+#docroot/sites/all/libraries
+docroot/sites/all/modules/contrib
+docroot/sites/all/themes/contrib
+
+# Ignore any files created by Drush Make from patching Core or Contrib
+docroot/**/PATCHES.txt
+docroot/**/*.patch
+
+# Ignore Composer's vendor directory
+vendor
+
+# Ignore docker dirs
+.docker-sync
+.persist

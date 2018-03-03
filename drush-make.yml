@@ -1,0 +1,16 @@
+core: 7.x
+api: '2'
+
+defaults:
+  projects:
+    subdir: contrib
+
+includes:
+  - drush-make.lock.ini
+
+#projects:
+#  mymodule:
+#    patch:
+#      # Title of d.o issue
+#      # URL of d.o issue or comment including patch
+#      - URL of d.o patch
