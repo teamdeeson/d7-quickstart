@@ -3,11 +3,20 @@
 .sass-cache
 BACKPORT.txt
 backups
+reset
 xdebug_profiles
-docroot/frontend
-frontend/assets/css
-frontend/assets/js/min
-docroot/sites/all/modules/contrib/coder
+
+# Ignore docker dirs
+.persist
+
+# Ignore Composer's vendor directory
+vendor
+
+# Ignore sql files
+*.sql
+
+# Ignore private files dir
+private
 
 # Ignore paths that contain user-generated content.
 docroot/sites/*/files
@@ -52,9 +61,10 @@ docroot/update.php
 docroot/UPGRADE.txt
 docroot/web.config
 docroot/xmlrpc.php
+docroot/pantheon.upstream.yml
 
 # Ignore Drupal Contrib
-#docroot/sites/all/libraries
+docroot/sites/all/libraries
 docroot/sites/all/modules/contrib
 docroot/sites/all/themes/contrib
 
@@ -62,9 +72,7 @@ docroot/sites/all/themes/contrib
 docroot/**/PATCHES.txt
 docroot/**/*.patch
 
-# Ignore Composer's vendor directory
-vendor
-
-# Ignore docker dirs
-.docker-sync
-.persist
+# Ignore frontend compiled assets
+docroot/frontend
+frontend/assets/css
+frontend/assets/js/min

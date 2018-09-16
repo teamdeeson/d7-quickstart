@@ -8,9 +8,14 @@ defaults:
 includes:
   - drush-make.lock.ini
 
-#projects:
+projects:
 #  mymodule:
 #    patch:
 #      # Title of d.o issue
 #      # URL of d.o issue or comment including patch
 #      - URL of d.o patch
+  apachesolr:
+    patch:
+      # Solr 6.x
+      # https://www.drupal.org/project/apachesolr/issues/2864961
+      - 'https://www.drupal.org/files/issues/adding-solr-6x-config-2864961.patch'

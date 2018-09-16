@@ -7,7 +7,7 @@
 
 if (SETTINGS_PLATFORM === 'docker') {
   // Database.
-  $databases['default']['default'] = [
+  $databases['default']['default'] = array(
     'database' => getenv('DB_NAME'),
     'username' => getenv('DB_USER'),
     'password' => getenv('DB_PASSWORD'),
@@ -15,5 +15,5 @@ if (SETTINGS_PLATFORM === 'docker') {
     'host' => getenv('DB_HOST'),
     'port' => '3306',
     'driver' => getenv('DB_DRIVER'),
-  ];
+  );
 }
