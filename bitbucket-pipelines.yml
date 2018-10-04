@@ -1,0 +1,127 @@
+clone:
+  depth: full
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Build Drupal
+          image: wodby/drupal-php:7.1-2.4.3
+          caches:
+            - composer
+            - drush
+          script:
+            - make build-drupal
+          artifacts:
+            - '**'
+      - step:
+          name: Build Front-End
+          image:
+            name: deeson/fe-node
+            run-as-user: 1000
+          caches:
+            - node
+          script:
+            - make build-frontend
+          artifacts:
+            - '**'
+      - step:
+          name: Relay
+          image: deeson/deployer
+          script:
+            - make deploy
+          artifacts:
+            - '**'
+    develop:
+      - step:
+          name: Build Drupal
+          image: wodby/drupal-php:7.1-2.4.3
+          caches:
+            - composer
+            - drush
+          script:
+            - make build-drupal
+          artifacts:
+            - '**'
+      - step:
+          name: Build Front-End
+          image:
+            name: deeson/fe-node
+            run-as-user: 1000
+          caches:
+            - node
+          script:
+            - make build-frontend
+          artifacts:
+            - '**'
+      - step:
+          name: Relay
+          image: deeson/deployer
+          script:
+            - make deploy
+          artifacts:
+            - '**'
+    UAT:
+      - step:
+          name: Build Drupal
+          image: wodby/drupal-php:7.1-2.4.3
+          caches:
+            - composer
+            - drush
+          script:
+            - make build-drupal
+          artifacts:
+            - '**'
+      - step:
+          name: Build Front-End
+          image:
+            name: deeson/fe-node
+            run-as-user: 1000
+          caches:
+            - node
+          script:
+            - make build-frontend
+          artifacts:
+            - '**'
+      - step:
+          name: Relay
+          image: deeson/deployer
+          script:
+            - make deploy
+          artifacts:
+            - '**'
+  tags:
+    '*':
+      - step:
+          name: Build Drupal
+          image: wodby/drupal-php:7.1-2.4.3
+          caches:
+            - composer
+            - drush
+          script:
+            - make build-drupal
+          artifacts:
+            - '**'
+      - step:
+          name: Build Front-End
+          image:
+            name: deeson/fe-node
+            run-as-user: 1000
+          caches:
+            - node
+          script:
+            - make build-frontend
+          artifacts:
+            - '**'
+      - step:
+          name: Relay
+          image: deeson/deployer
+          script:
+            - make deploy
+          artifacts:
+            - '**'
+
+definitions:
+  caches:
+    drush: ~/.drush/cache
+    node: src/frontend/node_modules
