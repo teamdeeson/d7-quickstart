@@ -9,9 +9,9 @@ repo_root=$(pwd)
 source "$repo_root/.build.env"
 
 if [ "$drupal_build" == "Y" ]; then
-  docker run -ti -v $repo_root:/var/www/html -w /var/www/html "$drupal_build_php_tag" /bin/bash -c "$drupal_build_command"
+  docker run -ti -v $repo_root:/var/www/html -w /var/www/html "$drupal_build_php_tag" /bin/bash -c "$drupal_install_command"
 fi
 
 if [ "$frontend_build" == "Y" ]; then
-  docker run -ti -v $repo_root/frontend:/app -w /app "$frontend_build_tag" /bin/bash -c "$frontend_dependency_command"
+  docker run -ti -v $repo_root/frontend:/app -w /app "$frontend_build_tag" /bin/bash -c "$frontend_install_command"
 fi

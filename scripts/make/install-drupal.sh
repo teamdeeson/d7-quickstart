@@ -12,11 +12,11 @@ if [ "$drupal_build_composer_install" == "Y" ]; then
   composer install
 fi
 
-if [ "$drupal_fix_settings" == "Y" ]; then
-  chmod u+w docroot/sites/* docroot/sites/*/settings.php
-fi
-
 if [ "$drupal_build_drush_make" == "Y" ]; then
   cd docroot \
     && ../vendor/bin/drush @none make -y --nocolor --no-recursion ../drush-make.yml
+fi
+
+if [ "$drupal_fix_settings" == "Y" ]; then
+  chmod u+w docroot/sites/* docroot/sites/*/settings.php
 fi

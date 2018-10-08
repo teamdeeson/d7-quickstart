@@ -1,3 +1,5 @@
+ENVIRONMENT?=docker
+DRUSH_ARGS?=-y --nocolor
 HOST=php
 SOLR_HOST=solr
 COMMAND=/bin/bash
@@ -30,7 +32,7 @@ test:
 
 # Update Drupal
 update:
-	./scripts/make/update.sh
+	./scripts/make/update.sh ${ENVIRONMENT} ${DRUSH_ARGS}
 
 # Set the alias required by Xdebug
 xdebug:
@@ -61,11 +63,11 @@ shell:
 #
 
 # Initialise Apache Solr core in service container for Apache Solr (without Search API).
-init-solr:
+build-solr:
 	make shell HOST=$(SOLR_HOST) COMMAND='make core=core1 config_set=apachesolr -f /usr/local/bin/actions.mk'
 
 # Initialise Apache Solr core in service container for Apache Solr (via Search API).
-init-searchapi-solr:
+build-searchapi-solr:
 	make shell HOST=$(SOLR_HOST) COMMAND='make core=core1 -f /usr/local/bin/actions.mk'
 
 
@@ -102,7 +104,7 @@ clean-drupal: clean-composer
 
 # Build Drupal
 build-drupal:
-	./scripts/make/build-drupal.sh
+	./scripts/make/install-drupal.sh
 
 # Build the frontend resources and copy them into the docroot.
 build-frontend:
