@@ -17,4 +17,9 @@ if [ "$drupal_version" == "7" ]; then
     && drush @docker cc all \
     && drush @docker cc drush \
     && drush @docker fl
+elif [ "$drupal_version" == "8" ]; then
+  drush @docker cim sync -y \
+    && drush @docker updb -y \
+    && drush @docker updb -y --entity-updates \
+    && drush @docker cr
 fi

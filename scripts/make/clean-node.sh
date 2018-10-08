@@ -8,4 +8,4 @@ repo_root=$(pwd)
 
 source "$repo_root/.build.env"
 
-rm -rf frontend/node_modules
+rm -rf "$frontend_node_modules"
