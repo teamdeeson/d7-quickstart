@@ -85,8 +85,7 @@ clean-node:
 
 # Remove all front-end build artefacts including NodeJS modules
 clean-frontend: clean-node
-#	rm -rf frontend/pc_pd/assets/css
-#	unlink pc_pd/assets/js/min/app.min.js
+	./scripts/make/clean-frontend.sh
 
 # Remove dependencies managed by Composer
 clean-composer:
