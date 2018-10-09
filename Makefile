@@ -52,7 +52,7 @@ stop:
 restart: stop start
 
 # Connect to the shell on a docker host, defaults to HOST=php COMMAND=/bin/bash
-# Usage: make docker-shell HOST=[service name] COMMAND=[command]
+# Usage: make shell HOST=[service name] COMMAND=[command]
 shell:
 	docker-compose exec $(HOST) $(COMMAND)
 
