@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+.sass-cache
+BACKPORT.txt
+backups
+docroot/frontend
+docroot/sites/all/modules/contrib/coder
+
+# Ignore paths that contain user-generated content.
+docroot/sites/*/files
+
+frontend/node_modules

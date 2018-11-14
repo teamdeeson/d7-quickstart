@@ -11,9 +11,11 @@ pipelines:
             - composer
             - drush
           script:
-            - make build-drupal
+            - make pipelines-build-drupal
           artifacts:
-            - '**'
+            - 'docroot/**'
+            - 'vendor/**'
+            - 'web'
       - step:
           name: Build Front-End
           image:
@@ -22,16 +24,15 @@ pipelines:
           caches:
             - node
           script:
-            - make build-frontend
+            - make pipelines-build-frontend
           artifacts:
-            - '**'
+            - 'frontend/assets/**'
+            - 'frontend/node_modules/**'
       - step:
           name: Relay
           image: deeson/deployer
           script:
-            - make deploy
-          artifacts:
-            - '**'
+            - make pipelines-deploy
     develop:
       - step:
           name: Build Drupal
@@ -40,9 +41,11 @@ pipelines:
             - composer
             - drush
           script:
-            - make build-drupal
+            - make pipelines-build-drupal
           artifacts:
-            - '**'
+            - 'docroot/**'
+            - 'vendor/**'
+            - 'web'
       - step:
           name: Build Front-End
           image:
@@ -51,16 +54,15 @@ pipelines:
           caches:
             - node
           script:
-            - make build-frontend
+            - make pipelines-build-frontend
           artifacts:
-            - '**'
+            - 'frontend/assets/**'
+            - 'frontend/node_modules/**'
       - step:
           name: Relay
           image: deeson/deployer
           script:
-            - make deploy
-          artifacts:
-            - '**'
+            - make pipelines-deploy
     UAT:
       - step:
           name: Build Drupal
@@ -69,9 +71,11 @@ pipelines:
             - composer
             - drush
           script:
-            - make build-drupal
+            - make pipelines-build-drupal
           artifacts:
-            - '**'
+            - 'docroot/**'
+            - 'vendor/**'
+            - 'web'
       - step:
           name: Build Front-End
           image:
@@ -80,16 +84,15 @@ pipelines:
           caches:
             - node
           script:
-            - make build-frontend
+            - make pipelines-build-frontend
           artifacts:
-            - '**'
+            - 'frontend/assets/**'
+            - 'frontend/node_modules/**'
       - step:
           name: Relay
           image: deeson/deployer
           script:
-            - make deploy
-          artifacts:
-            - '**'
+            - make pipelines-deploy
   tags:
     '*':
       - step:
@@ -99,9 +102,11 @@ pipelines:
             - composer
             - drush
           script:
-            - make build-drupal
+            - make pipelines-build-drupal
           artifacts:
-            - '**'
+            - 'docroot/**'
+            - 'vendor/**'
+            - 'web'
       - step:
           name: Build Front-End
           image:
@@ -110,16 +115,15 @@ pipelines:
           caches:
             - node
           script:
-            - make build-frontend
+            - make pipelines-build-frontend
           artifacts:
-            - '**'
+            - 'frontend/assets/**'
+            - 'frontend/node_modules/**'
       - step:
           name: Relay
           image: deeson/deployer
           script:
-            - make deploy
-          artifacts:
-            - '**'
+            - make pipelnes-deploy
 
 definitions:
   caches:
