@@ -28,6 +28,7 @@ docroot/sites/*/files
 ###
 
 # Ignore Drupal Core
+docroot/.circleci
 docroot/includes
 docroot/misc
 docroot/modules
@@ -74,5 +75,5 @@ docroot/**/*.patch
 
 # Ignore frontend compiled assets
 docroot/frontend
-frontend/assets/css
-frontend/assets/js/min
+frontend/assets
+frontend/node_modules
