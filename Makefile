@@ -101,17 +101,61 @@ clean-drupal: clean-composer
 # Targets for Bitbucket Pipelines
 #
 
-# Build Drupal
-build-drupal:
+# Build Drupal under Pipelnes.
+pipelines-build-drupal:
 	./scripts/make/install-drupal.sh
 
-# Build the frontend resources and copy them into the docroot.
-build-frontend:
+# Build the frontend resources and copy them into the docroot under Pipelines
+pipelines-build-frontend:
 	./scripts/make/build-frontend.sh
 
-# Relay to hosting platform provided Git repository
-deploy:
+# Relay to hosting platform provided Git repository under Pipelines.
+pipelines-deploy:
 	/opt/ci-tools/deployer.sh
+
+# Run all the tests under Pipelines.
+pipelines-test: pipelines-test-all
+
+# Run only the coding standards tests under Pipelines.
+pipelines-test-standards:
+	./scripts/make/test/run-test.sh --standards
+
+# Run only the unit tests under Pipelines.
+pipelines-test-unit:
+	./scripts/make/test/run-test.sh --unit
+
+# Run only the behat tests under Pipelines.
+pipelines-test-behat:
+	./scripts/make/test/run-test.sh --behat
+
+# Run all the tests under Pipelines.
+pipelines-test-all:
+	./scripts/make/test/run-test.sh --all
+
+
+
+#
+# Targets for interacting with Docker Compose
+#
+
+# Run all the tests.
+test: test-all
+
+# Run only the coding standards tests.
+test-standards:
+	./scripts/make/test/run-tests.sh --standards
+
+# Run only the unit tests.
+test-unit:
+	./scripts/make/test/run-tests.sh --unit
+
+# Run only the behat tests.
+test-behat:
+	./scripts/make/test/run-tests.sh --behat
+
+# Run all the tests.
+test-all:
+	./scripts/make/test/run-tests.sh --all
 
 
 
