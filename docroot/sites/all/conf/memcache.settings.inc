@@ -5,7 +5,7 @@
  * Memcache settings.
  */
 
-if (SETTINGS_PLATFORM === 'docker') {
+if (SETTINGS_PLATFORM === D_PLATFORM_DOCKER) {
   $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
   $conf['cache_default_class'] = 'MemCacheDrupal';
   $conf['cache_class_form'] = 'DrupalDatabaseCache';
@@ -18,7 +18,7 @@ if (SETTINGS_PLATFORM === 'docker') {
     'cache' => 'default'
   );
 }
-//elseif (SETTINGS_PLATFORM === 'acquia') {
+//elseif (SETTINGS_PLATFORM === D_PLATFORM_ACQUIA) {
 //  $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
 //  $conf['cache_default_class'] = 'MemCacheDrupal';
 //  $conf['cache_class_form'] = 'DrupalDatabaseCache';
