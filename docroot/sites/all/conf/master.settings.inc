@@ -132,7 +132,7 @@ $conf['master_modules']['base'] = array(
 
 );
 
-if (SETTINGS_ENVIRONMENT === 'local') {
+if (SETTINGS_ENVIRONMENT === D_ENVIRONMENT_LOCAL) {
   $conf['master_modules']['base'] = array_merge($conf['master_modules']['base'], array(
     // Core
     'dblog',
@@ -148,7 +148,7 @@ if (SETTINGS_ENVIRONMENT === 'local') {
   ));
 }
 
-if (SETTINGS_ENVIRONMENT === 'dev') {
+if (SETTINGS_ENVIRONMENT === D_ENVIRONMENT_DEV) {
   $conf['master_modules']['base'] = array_merge($conf['master_modules']['base'], array(
     // Core
     'dblog',
@@ -162,7 +162,7 @@ if (SETTINGS_ENVIRONMENT === 'dev') {
   ));
 }
 
-if (SETTINGS_ENVIRONMENT === 'test') {
+if (SETTINGS_ENVIRONMENT === D_ENVIRONMENT_TEST) {
   $conf['master_modules']['base'] = array_merge($conf['master_modules']['base'], array(
     // Core
     'dblog',
@@ -175,7 +175,7 @@ if (SETTINGS_ENVIRONMENT === 'test') {
   ));
 }
 
-if (SETTINGS_ENVIRONMENT === 'prod') {
+if (SETTINGS_ENVIRONMENT === D_ENVIRONMENT_PROD) {
   $conf['master_modules']['base'] = array_merge($conf['master_modules']['base'], array(
     // Core
     'syslog',

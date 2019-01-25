@@ -1,31 +1,39 @@
 <?php
 
+const D_ENVIRONMENT_LOCAL = 'local';
+const D_ENVIRONMENT_DEV = 'dev';
+const D_ENVIRONMENT_TEST = 'test';
+const D_ENVIRONMENT_PROD = 'prod';
+
+const D_PLATFORM_DOCKER = 'docker';
+const D_PLATFORM_PIPELINES = 'pipelines';
+const D_PLATFORM_ACQUIA = 'acquia';
+const D_PLATFORM_PANTHEON = 'pantheon';
+const D_PLATFORM_PLATFORMSH = 'platformsh';
+
 $base_domains = array(
 
   // Docker
-  getenv('D4D_HOSTNAME') => 'local',
+  getenv('D4D_HOSTNAME') => D_ENVIRONMENT_LOCAL,
 
 );
 
 $platform = '';
 $instance = $_SERVER['HTTP_HOST'];
 $env = $base_domains[$_SERVER['HTTP_HOST']];
+$acquia_settings_file = '/var/www/site-php/my_project/my_project-settings.inc';
 
 if (isset($_SERVER['AH_SITE_ENVIRONMENT']) || isset($_ENV['AH_SITE_ENVIRONMENT'])) {
-  $platform = 'acquia';
-  if (file_exists('/var/www/site-php/cope_opsmana/cope_opsmana-settings.inc')) {
-    require_once '/var/www/site-php/cope_opsmana/cope_opsmana-settings.inc';
+  $platform = D_PLATFORM_ACQUIA;
+  if (file_exists($acquia_settings_file)) {
+    require_once $acquia_settings_file;
   }
 }
 elseif (isset($_SERVER['PANTHEON_ENVIRONMENT']) || isset($_ENV['PANTHEON_ENVIRONMENT'])) {
-  $platform = 'pantheon';
+  $platform = D_PLATFORM_PANTHEON;
 }
 elseif (getenv('DOCKER_LOCAL')) {
-  $platform = 'docker';
-}
-elseif (file_exists('/var/www/settings/cope/settings.inc')) {
-  $platform = 'vdd';
-  require_once '/var/www/settings/cope/settings.inc';
+  $platform = D_PLATFORM_DOCKER;
 }
 
 if (!empty($env) && !empty($platform) && !empty($instance)) {

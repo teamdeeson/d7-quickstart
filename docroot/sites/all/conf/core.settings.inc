@@ -29,7 +29,7 @@ $conf['date_default_timezone'] = 'Europe/London';
 $conf['configurable_timezones'] = '0';
 $conf['date_format_medium'] = 'jS F Y';
 
-if (SETTINGS_PLATFORM === 'docker') {
+if (SETTINGS_PLATFORM === D_PLATFORM_DOCKER) {
   $conf['file_temporary_path'] = '/tmp';
   $conf['file_public_path'] = 'sites/default/files';
   $conf['file_private_path'] = '../.persist/private/';

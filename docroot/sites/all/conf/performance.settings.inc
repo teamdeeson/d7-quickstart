@@ -5,7 +5,7 @@
  * Performance settings.
  */
 
-if (in_array(SETTINGS_ENVIRONMENT, array('prod', 'test'))) {
+if (in_array(SETTINGS_ENVIRONMENT, array(D_ENVIRONMENT_PROD, D_ENVIRONMENT_TEST))) {
   $conf['cache'] = 1;
   $conf['block_cache'] = 1;
   $conf['preprocess_css'] = 1;
