@@ -21,10 +21,10 @@ $base_domains = array(
 $platform = '';
 $instance = $_SERVER['HTTP_HOST'];
 $env = $base_domains[$_SERVER['HTTP_HOST']];
-$acquia_settings_file = '/var/www/site-php/my_project/my_project-settings.inc';
 
 if (isset($_SERVER['AH_SITE_ENVIRONMENT']) || isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   $platform = D_PLATFORM_ACQUIA;
+  $acquia_settings_file = '/var/www/site-php/my_project/my_project-settings.inc';
   if (file_exists($acquia_settings_file)) {
     require_once $acquia_settings_file;
   }
