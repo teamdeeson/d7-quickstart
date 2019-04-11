@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 script_path=$(dirname $0)
 working_dir=$(pwd)
 cd "$script_path"
