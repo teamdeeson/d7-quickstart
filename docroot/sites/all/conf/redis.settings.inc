@@ -17,7 +17,7 @@ if (SETTINGS_ENVIRONMENT !== 'local') {
   // Use Redis for Drupal locks (semaphore).
   $conf['lock_inc'] = $contrib_path . '/redis/redis.lock.inc';
 }
-elseif (SETTINGS_INSTANCE === 'docker') {
+elseif (SETTINGS_ENVIRONMENT === 'docker') {
   $conf['redis_client_base'] = 0;
   $conf['redis_client_interface'] = 'PhpRedis';
   $conf['lock_inc'] = $contrib_path . '/redis/redis.lock.inc';
