@@ -13,7 +13,6 @@ if [ "$drupal_version" == "7" ]; then
   rm -rf docroot/misc
   rm -rf docroot/modules
   rm -rf docroot/scripts
-  rm -rf docroot/themes
   rm -rf docroot/.htaccess
   rm -rf docroot/.editorconfig
   rm -rf docroot/.gitignore
@@ -47,6 +46,16 @@ if [ "$drupal_version" == "7" ]; then
   rm -rf docroot/sites/all/themes/contrib
   rm -rf docroot/sites/all/themes/README.txt
 
+  if [ "$drupal_alternative_theme_engine" == "Y" ]; then
+    rm -rf docroot/themes/bartik
+    rm -rf docroot/themes/garland
+    rm -rf docroot/themes/seven
+    rm -rf docroot/themes/stark
+    rm -rf docroot/themes/engines/phptemplate
+  else
+    rm -rf docroot/themes
+  fi
+
   if [ "$drupal_custom_profile" == "Y" ]; then
     rm -rf docroot/profiles/README.txt
     rm -rf docroot/profiles/minimal
@@ -54,6 +63,7 @@ if [ "$drupal_version" == "7" ]; then
     rm -rf docroot/profiles/testing
   else
     rm -rf docroot/profiles
+
   fi
 
 elif [ "$drupal_version" == "8" ]; then
