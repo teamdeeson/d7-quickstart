@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -ex
 
 script_path=$(dirname $0)
 working_dir=$(pwd)
