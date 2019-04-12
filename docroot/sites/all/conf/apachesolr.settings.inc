@@ -5,9 +5,9 @@
  * Settings for the apachesolr module.
  */
 
-if (SETTINGS_ENVIRONMENT === 'local') {
+if (SETTINGS_ENVIRONMENT === D_ENVIRONMENT_LOCAL) {
   $conf['apachesolr_default_environment'] = 'acquia_search_server_1';
-  if (SETTINGS_PLATFORM === 'docker') {
+  if (SETTINGS_PLATFORM === D_PLATFORM_DOCKER) {
     $conf['apachesolr_environments']['acquia_search_server_1']['url'] = 'http://solr:8983/solr/core1';
   }
   else {

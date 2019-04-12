@@ -5,7 +5,7 @@
  * Database connection information.
  */
 
-if (SETTINGS_PLATFORM === 'docker') {
+if (SETTINGS_PLATFORM === D_PLATFORM_DOCKER) {
   // Database.
   $databases['default']['default'] = array(
     'database' => getenv('DB_NAME'),
