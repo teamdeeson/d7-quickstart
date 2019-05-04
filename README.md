@@ -4,7 +4,7 @@ Welcome to the repository of the *D7 QuickStart* project. Thank you for choosing
 
 ## Prerequisites.
 
-You'll need to be running [Docker](https://www.docker.com/) and the [Deeson Dokcer Proxy](https://github.com/teamdeeson/docker-proxy) to run this project locally.
+You'll need to be running [Docker](https://www.docker.com/) and the [Deeson Docker Proxy](https://github.com/teamdeeson/docker-proxy) to run this project locally.
 
 ## Getting started.
 
