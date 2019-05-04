@@ -58,12 +58,16 @@ projects:
 
 ## Branching strategy.
 
-We use [GitFlow]() branching strategy on this project.
+We use [GitFlow](https://www.deeson.co.uk/labs/using-git-flow-drupal-project) branching strategy on this project.
 
 ## Deployment.
 
 The `bitbucket-pipelines.yml` file describes the build process which is execute on commit to specified branches in BitBucket.
 
+## Hosting.
+
+This project is hosted on **insert hosting provider details here**.
+
 ## Jira project management.
 
-Tickets are managed in this Jira project: *Add link here*
+Tickets are managed in this [Jira project]() **<--Add link here**
