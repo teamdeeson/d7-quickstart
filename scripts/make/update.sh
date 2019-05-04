@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 script_path=$(dirname $0)
 drush_alias="$1"
 if [ "$drush_alias" == "" ]; then
