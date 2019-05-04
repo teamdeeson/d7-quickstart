@@ -1,4 +1,4 @@
-# Deeson D7 QuickStart..
+# Deeson D7 QuickStart.
 
 Welcome to the repository of the *D7 QuickStart* project. Thank you for choosing to work on this project.
 
@@ -67,6 +67,15 @@ The `bitbucket-pipelines.yml` file describes the build process which is execute 
 ## Hosting.
 
 This project is hosted on **insert hosting provider details here**.
+
+## Environmental configuration management.
+
+This project uses:
+
+* Features module for exporting database artifacts
+* [master module](https://www.deeson.co.uk/labs/drupal-7-environment-dependency-management-master-module) for specifying per environment module requirements
+* An organised approach to [settings.php environmental variables](https://www.deeson.co.uk/labs/site-configuration-strategy-or-how-manage-your-settingsphp-files) via the `sites/all/conf` directory.
+* Secure environment settings should not be in version control and managed via the hosting environment variables.
 
 ## Jira project management.
 
