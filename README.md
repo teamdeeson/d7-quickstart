@@ -68,7 +68,7 @@ The `bitbucket-pipelines.yml` file describes the build process which is execute 
 
 This project is hosted on **insert hosting provider details here**.
 
-## Environmental configuration management.
+## Environmental configuration management.
 
 This project uses:
 
