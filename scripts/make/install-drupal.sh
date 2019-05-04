@@ -21,3 +21,7 @@ if [ "$drupal_build_drush_make" == "Y" ]; then
     && ../vendor/bin/drush @none make -y --nocolor --no-recursion ../drush-make.yml
   cd ..
 fi
+
+if [ "$drupal_fix_settings" == "Y" ]; then
+  chmod u+w docroot/sites/* docroot/sites/*/settings.php
+fi
