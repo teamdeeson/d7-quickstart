@@ -60,6 +60,14 @@ projects:
 
 We use [GitFlow](https://www.deeson.co.uk/labs/using-git-flow-drupal-project) branching strategy on this project.
 
+When starting work on a new feature, name the feature branch starting with the Jira ticket number
+
+`git flow feature start fsa-25--some-issue-description`
+
+Make sure any pull requests are set to merge to develop when done.
+
+You can merge into the UAT branch without a pull request to deploy your work to the dev site. Don't finish the feature branch when you do this - feature branches are only finished when they have passed inspection on UAT and have at least one approved pull request and then merged into develop ready for the next release.
+
 ## Deployment.
 
 The `bitbucket-pipelines.yml` file describes the build process which is execute on commit to specified branches in BitBucket.
