@@ -75,5 +75,5 @@ docroot/**/*.patch
 
 # Ignore frontend compiled assets
 docroot/frontend
-frontend/assets
-frontend/node_modules
+src/frontend/assets
+src/frontend/node_modules

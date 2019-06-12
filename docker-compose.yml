@@ -111,7 +111,7 @@ services:
     depends_on:
       - 'fe-php'
     volumes:
-      - ./frontend:/app:delegated
+      - ./src/frontend:/app:delegated
     working_dir: /app
     environment:
       DOCKER_LOCAL: 1
@@ -128,7 +128,7 @@ services:
     image: deeson/fe-php
     container_name: "${PROJECT_NAME}_fe-php"
     volumes:
-      - ./frontend:/app:delegated
+      - ./src/frontend:/app:delegated
     working_dir: /app
     environment:
       DOCKER_LOCAL: 1
