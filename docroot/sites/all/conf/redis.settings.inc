@@ -7,6 +7,8 @@
 
 $contrib_path = 'sites/all/modules/contrib';
 
+// @codingStandardsIgnoreStart
+/*
 if (SETTINGS_ENVIRONMENT !== D_ENVIRONMENT_LOCAL) {
   $conf['redis_client_interface'] = 'PhpRedis';
   $conf['cache_backends'][] = $contrib_path . '/redis/redis.autoload.inc';
@@ -28,3 +30,5 @@ elseif (SETTINGS_ENVIRONMENT === D_ENVIRONMENT_LOCAL) {
   $conf['redis_client_host'] = 'redis';
   $conf['redis_client_port'] = '6379';
 }
+*/
+// @codingStandardsIgnoreEnd
