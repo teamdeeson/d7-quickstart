@@ -92,6 +92,7 @@ $conf['master_modules']['base'] = array(
   'media_wysiwyg',
   'media_youtube',
   'metatag',
+  'multiform',
   'module_filter',
   'page_manager',
   'panels',
